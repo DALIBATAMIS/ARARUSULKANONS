@@ -1,0 +1,94 @@
+@import "colours";
+@import "emptyyourguts";
+// @import "fonts";
+@use "sass:math";
+
+html {
+    background-color: $lblack;
+    color: $white;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+header {
+    display: block;
+    position: sticky;
+    background-color: $llblack;
+    width: 100%;
+    margin: 0;
+    z-index: 10;
+    border-bottom: $lllblack solid 1px;
+}
+
+img.logo {
+    // border: 2px solid red;
+    max-height: 5em;
+    margin: 0;
+    padding: 0;
+    padding-left: 0.3%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-menu-item {
+    font-size: x-large;
+    color: $hot_pink;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: calc(5em - 1vw);
+    padding-bottom: 0;
+}
+
+.header-menu-item:hover {
+    color: $baby_pink;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.big-hello {
+    font-size: calc(calc(1vh + 1vw) * 5);
+    font-weight: bolder;
+    text-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $hot_pink;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.eu-logo {
+    width: 20vh;
+}
+
+.news-posts {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #2500;
+}
+
+@media only screen and (max-width: 760px) {
+    .header-menu-item {
+        font-size: large;
+    }
+}

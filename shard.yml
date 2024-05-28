@@ -1,0 +1,17 @@
+name: ARARUSULKANONS
+version: 0.1.0
+
+authors:
+  - datawater <DALIBATAMI@gmail>
+
+targets:
+  ararusulkanons:
+    main: src/ararusulkanons.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: '>= 1.12.1'
+
+license: MIT
