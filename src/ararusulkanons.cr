@@ -7,11 +7,7 @@ get "/" do |env|
 end
 
 get "/donate" do |env|
-  send_file env, "./public/todo.html"
-end
-
-get "/about-us" do |env|
-  send_file env, "./public/todo.html"
+  send_file env, "./public/donate.html"
 end
 
 Kemal.run

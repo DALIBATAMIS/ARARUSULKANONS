@@ -1,0 +1,21 @@
+@import "header";
+@import "emptyyourguts";
+
+html {
+    background-color: $lblack;
+    color: $white;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.donate-box {
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.donation-bank {
+    margin-bottom: 1vh;
+}
