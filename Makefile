@@ -1,4 +1,4 @@
-BE_VERBOSE ?= falsec
+BE_VERBOSE ?= false
 FLAGS =
 ifeq ($(BE_VERBOSE),true)
 	FLAGS += -v -s -p -t
@@ -21,4 +21,4 @@ build: build_sass install
 	shards build -d --jobs=$(shell nproc --all) $(FLAGS)
 
 release: build_sass install
-	shards build --release --mcpu native --no-debug $(FLAGS)
+	shards build --release --no-debug $(FLAGS)
