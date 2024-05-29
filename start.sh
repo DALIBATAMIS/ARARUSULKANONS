@@ -2,4 +2,4 @@
 
 source .env
 
-ararusulkanons
+./bin/ararusulkanons
