@@ -18,4 +18,4 @@ FROM alpine:latest
 WORKDIR /
 COPY --from=builder /opt/bin/ararusulkanons .
 
-ENTRYPOINT bash start.sh
+ENTRYPOINT start.sh
