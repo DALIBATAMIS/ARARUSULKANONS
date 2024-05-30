@@ -1,4 +1,5 @@
 require "kemal"
+require "./env.cr"
 require "./get_news_articles.cr"
 require "./link_preview.cr"
 

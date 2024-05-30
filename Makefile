@@ -21,4 +21,4 @@ build: build_sass install
 	shards build -d --jobs=$(shell nproc --all) $(FLAGS)
 
 release: build_sass install
-	shards build --release --no-debug $(FLAGS)
+	shards build --release --no-debug --jobs=4 --static $(FLAGS)

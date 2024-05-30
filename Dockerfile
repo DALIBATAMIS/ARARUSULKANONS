@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.12.1 as builder
+FROM crystallang/crystal:latest as builder
 
 WORKDIR /opt
 
@@ -12,10 +12,12 @@ RUN shards install -v
 COPY . /opt/
 RUN make release BE_VERBOSE=true
 
-RUN ls bin
-
-FROM alpine:latest
+FROM ubuntu:latest
 WORKDIR /
+RUN mkdir www
+WORKDIR /www
 COPY --from=builder /opt/bin/ararusulkanons .
+COPY --from=builder /opt/.env .
+COPY --from=builder /opt/public .
 
-ENTRYPOINT start.sh
+ENTRYPOINT ./ararusulkanons

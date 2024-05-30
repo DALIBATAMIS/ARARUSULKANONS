@@ -1,7 +1,7 @@
 require "kemal"
 require "http/client"
 
-API_KEY_LINK = ENV["API_KEY_LINK"][1..-2]
+API_KEY_LINK = init_env()["API_KEY_LINK"][1..-2]
 URL_LINK = "https://api.linkpreview.net/?q="
 
 hash_table = Hash(String, String).new
