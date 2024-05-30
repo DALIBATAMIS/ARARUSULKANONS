@@ -33,11 +33,9 @@ const get_link_preview = (async (url) => {
 });
 
 const append_to_articles = ((url, image_url, name, desc) => {
-    console.log("Hello, World");
-
     let html = `
     <div class="news-post">
-            <a class="news-url" href="${url}">
+            <a class="news-url" target="_blank" href="https://${url}">
                 <div class="news-image">
                     <img src="${image_url}">
                 </div>
@@ -55,7 +53,7 @@ const append_to_articles = ((url, image_url, name, desc) => {
 })
 
 const update_articles = (async (index) => {
-    let articles = (await get_news).articles
+    let articles = (await get_news).articles;
 
     for (let i = index; i < index + 10; i++) {
         let article = articles[i];
@@ -67,7 +65,7 @@ const update_articles = (async (index) => {
 
         console.log(preview);
 
-        if (title == "" || title.error != undefined) continue;
+        if (title == "" || title.error != undefined || title == "Home - Moved") continue;
 
         let desc  = preview.description;
         let image = preview.image;

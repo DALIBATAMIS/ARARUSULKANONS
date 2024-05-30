@@ -1,9 +1,12 @@
+require "time"
 require "kemal"
 require "http/client"
 require "./env.cr"
 
-API_KEY_NEWS = init_env()["API_KEY_NEWS"][1..-2]
-URL_NEWS = "http://newsapi.org/v2/everything?q=georgia+foreign+agent+law&from=2024-04-28&sortBy=publishedAt&apiKey=#{API_KEY_NEWS}"
+DATE = (Time.local - 1.month).to_s("%Y-%m-%d")
+
+API_KEY_NEWS = init_env()["API_KEY_NEWS"]
+URL_NEWS = "http://newsapi.org/v2/everything?q=georgia+foreign+agent+law&from=#{DATE}&sortBy=publishedAt&apiKey=#{API_KEY_NEWS}"
 last_checked_news = Time::UNIX_EPOCH
 data_news = ""
 

@@ -16,8 +16,13 @@ FROM ubuntu:latest
 WORKDIR /
 RUN mkdir www
 WORKDIR /www
+RUN mkdir public
+
 COPY --from=builder /opt/bin/ararusulkanons .
 COPY --from=builder /opt/.env .
-COPY --from=builder /opt/public .
+COPY --from=builder /opt/public ./public/
+
+EXPOSE 3000
+EXPOSE 10000
 
 ENTRYPOINT ./ararusulkanons
