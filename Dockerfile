@@ -25,4 +25,4 @@ COPY --from=builder /opt/public ./public/
 EXPOSE 3000
 EXPOSE 10000
 
-ENTRYPOINT ./ararusulkanons --ssl
+ENTRYPOINT ./ararusulkanons
