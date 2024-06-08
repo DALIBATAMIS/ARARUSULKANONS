@@ -77,17 +77,17 @@ const update_articles = (async (index) => {
 let global_index = 0;
 
 (async () => {
-    // await get_news;
-    // update_articles(global_index);
+    await get_news;
+    update_articles(global_index);
 
-    // global_index += 10;
+    global_index += 10;
 
-    // window.onscroll = ((ev) => {
-    //     console.log(window.innerHeight + window.scrollY);
-    //     if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight && global_index != 70) {
-    //         update_articles(global_index);
-    //         global_index += 10;
-    //     }
-    // });
+    window.onscroll = ((ev) => {
+        console.log(window.innerHeight + window.scrollY);
+        if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight && global_index != 70) {
+            update_articles(global_index);
+            global_index += 10;
+        }
+    });
     // console.log(await get_news)
 })();
