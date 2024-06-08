@@ -5,8 +5,6 @@ require "./link_preview.cr"
 
 PORT = ENV["PORT"] ||= "3000"
 
-puts init_env["API_KEY_NEWS"]
-
 get "/" do |env|
   send_file env, "./public/index.html"
 end

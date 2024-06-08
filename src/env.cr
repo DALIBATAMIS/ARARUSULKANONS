@@ -14,7 +14,9 @@ def init_env
 
   content.each { |n|
     split = n.split("=")
-    env_args_[split[0]] = split[1]
+    if split.size != 1
+      env_args_[split[0]] = split[1]
+    end
   }
 
   env_args = env_args_
